@@ -1,0 +1,11 @@
+#Internal package file, do not edit.
+#Sat Apr 21 02:36:55 IST 2018
+1.base=G\:\\Academics\\Courses\\4th semester\\CSP203\\CSP203-Project\\Android Work\\1klik\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\162
+0.baseType=DIRECTORY
+1.baseType=DIRECTORY
+count=2
+1.set=DEX
+0.path=classes.dex
+0.set=DEX
+0.base=G\:\\Academics\\Courses\\4th semester\\CSP203\\CSP203-Project\\Android Work\\1klik\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\163
+1.path=classes.dex

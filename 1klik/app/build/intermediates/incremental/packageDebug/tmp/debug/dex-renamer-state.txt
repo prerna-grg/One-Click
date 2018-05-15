@@ -1,0 +1,7 @@
+#Sat Apr 21 02:36:55 IST 2018
+base.0=G\:\\Academics\\Courses\\4th semester\\CSP203\\CSP203-Project\\Android Work\\1klik\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\162
+path.1=classes.dex
+renamed.1=classes2.dex
+path.0=classes.dex
+renamed.0=classes.dex
+base.1=G\:\\Academics\\Courses\\4th semester\\CSP203\\CSP203-Project\\Android Work\\1klik\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\163

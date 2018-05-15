@@ -1,0 +1,133 @@
+-- Merging decision tree log ---
+manifest
+ADDED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:2:1-30:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\66f3f7e604a58c489f8db91d3b75a950\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\00e138da6a972c9d662748f262c2b845\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\683255cbf4980a430663e3b38323f7e7\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\12e82d3a5df9b40032c2152caab980f9\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\dbff3dd76c5d7b9d0d1dcb7dbc93751c\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\7f37d15c2dc356d7cc53566c367d2864\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\d268097a2ec1304cbead81f0bb7ef1a7\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\c6cbba7330af73fec34fa9435c5084da\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\7ef6028995ec8c2de2cad71fb6af0f31\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\db5ab03fa33c8e69855ed2aca7372c50\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\a936fb4e11449b944cc2b2c71357045c\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\8934769e670f764c5b6e4488a45aa743\AndroidManifest.xml:17:1-22:12
+INJECTED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:2:1-30:12
+	package
+		ADDED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:3:5-35
+		INJECTED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml
+		INJECTED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml
+		ADDED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:2:1-30:12
+		INJECTED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml
+		ADDED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:2:1-30:12
+		INJECTED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:5:5-79
+	android:name
+		ADDED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:5:22-76
+uses-permission#android.permission.INTERNET
+ADDED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:6:5-67
+	android:name
+		ADDED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:6:22-64
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:7:5-80
+	android:name
+		ADDED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:7:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:8:5-81
+	android:name
+		ADDED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:8:22-78
+uses-feature#android.hardware.camera
+ADDED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:9:5-84
+	android:required
+		ADDED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:9:58-81
+	android:name
+		ADDED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:9:19-57
+application
+ADDED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:12:5-28:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\00e138da6a972c9d662748f262c2b845\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\00e138da6a972c9d662748f262c2b845\AndroidManifest.xml:9:5-20
+	android:supportsRtl
+		ADDED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:17:9-35
+	android:label
+		ADDED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:15:9-41
+	android:roundIcon
+		ADDED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:16:9-54
+	android:icon
+		ADDED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:14:9-43
+	android:allowBackup
+		ADDED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:13:9-35
+	android:theme
+		ADDED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:18:9-40
+activity#a1klik.csp203.a1klik.MainActivity
+ADDED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:19:9-25:20
+	android:name
+		ADDED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:19:19-47
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:20:13-24:29
+action#android.intent.action.MAIN
+ADDED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:21:17-69
+	android:name
+		ADDED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:21:25-66
+category#android.intent.category.LAUNCHER
+ADDED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:23:17-77
+	android:name
+		ADDED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:23:27-74
+activity#a1klik.csp203.a1klik.after_login
+ADDED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:26:9-58
+	android:name
+		ADDED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:26:19-46
+activity#a1klik.csp203.a1klik.coursePage
+ADDED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:27:9-57
+	android:name
+		ADDED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml:27:19-45
+uses-sdk
+INJECTED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml
+INJECTED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\66f3f7e604a58c489f8db91d3b75a950\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\66f3f7e604a58c489f8db91d3b75a950\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\00e138da6a972c9d662748f262c2b845\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\00e138da6a972c9d662748f262c2b845\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\683255cbf4980a430663e3b38323f7e7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\683255cbf4980a430663e3b38323f7e7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\12e82d3a5df9b40032c2152caab980f9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\12e82d3a5df9b40032c2152caab980f9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\dbff3dd76c5d7b9d0d1dcb7dbc93751c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\dbff3dd76c5d7b9d0d1dcb7dbc93751c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\7f37d15c2dc356d7cc53566c367d2864\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\7f37d15c2dc356d7cc53566c367d2864\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\d268097a2ec1304cbead81f0bb7ef1a7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\d268097a2ec1304cbead81f0bb7ef1a7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\c6cbba7330af73fec34fa9435c5084da\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\c6cbba7330af73fec34fa9435c5084da\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\7ef6028995ec8c2de2cad71fb6af0f31\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\7ef6028995ec8c2de2cad71fb6af0f31\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\db5ab03fa33c8e69855ed2aca7372c50\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\db5ab03fa33c8e69855ed2aca7372c50\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\a936fb4e11449b944cc2b2c71357045c\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\a936fb4e11449b944cc2b2c71357045c\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\8934769e670f764c5b6e4488a45aa743\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Asus\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\8934769e670f764c5b6e4488a45aa743\AndroidManifest.xml:20:5-44
+INJECTED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml
+INJECTED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml
+		ADDED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml
+		INJECTED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml
+		ADDED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml
+		INJECTED from G:\Academics\Courses\4th semester\CSP203\CSP203-Project\Android Work\1klik\app\src\main\AndroidManifest.xml
