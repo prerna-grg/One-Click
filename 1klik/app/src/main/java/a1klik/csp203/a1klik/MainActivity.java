@@ -15,6 +15,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.regex.Pattern;
 
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     public Context stored;
@@ -23,15 +24,25 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences loginPreferences;
     SharedPreferences.Editor loginPrefsEditor;
     Boolean saveLogin;
+    public static final String PREFS_NAME = "LoginPrefs";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        TextView tv = (TextView) findViewById(R.id.tmpShowScreen);
+        tv.setText(null);
         UsernameEt = (EditText)findViewById(R.id.emailInput);
         PasswordEt = (EditText)findViewById(R.id.passwordInput);
         saveLoginCheckBox = (CheckBox)findViewById(R.id.rememberMeCheckBox);
         loginPreferences = getSharedPreferences("loginPrefs", MODE_PRIVATE);
         loginPrefsEditor = loginPreferences.edit();
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        if (settings.getString("logged", "").toString().equals("logged")) {
+            System.out.println("Already loggedin");
+            Intent iNewActivity = new Intent(MainActivity.this, after_login.class);
+            iNewActivity.putExtra("MyData", loginPreferences.getString("OutpuData",""));
+            startActivity(iNewActivity);
+        }
 
         saveLogin = loginPreferences.getBoolean("saveLogin", false);
         if (saveLogin == true) {
@@ -56,41 +67,50 @@ public class MainActivity extends AppCompatActivity {
         if (isNetworkAvailable()==false)
         {
             TextView tv = (TextView) findViewById(R.id.tmpShowScreen);
-            tv.setText("Please Check your Internet Connection");
+            tv.setText(getResources().getString(R.string.checkInterConnection));
             return;
         }
         if (isValid_email(username)==false)
         {
             TextView tv = (TextView) findViewById(R.id.tmpShowScreen);
-            tv.setText("Please enter valid email ID");
+            tv.setText(getResources().getString(R.string.InvalidEmailID));
             return;
         }
         else if (password.length()<6)
         {
             TextView tv = (TextView) findViewById(R.id.tmpShowScreen);
-            tv.setText("Please enter valid Password");
+            tv.setText(getResources().getString(R.string.InvalidPassword));
             return;
         }
         else
         {
             try {
                 TextView tv = (TextView) findViewById(R.id.tmpShowScreen);
-                tv.setText("Please wait while we login");
+                tv.setText(getResources().getString(R.string.LoginWaitMessage));
                 BackgroundWorker backgroundWorker = new BackgroundWorker(this);
                 String output = backgroundWorker.execute(type, username, password).get();
-                if (output.equals("invalid")) {
-
+                if (output==null || output.toString().equals("invalid")) {
+                    System.out.println("Bhai Error idhar hai, idhar dekh");
                     TextView tv_new = (TextView) findViewById(R.id.tmpShowScreen);
-                    tv_new.setText("Invalid emailID and Password ");
+                    //tv_new.setText((getResources().getString(R.string.InvalidEmailIDPass)));
+                    tv_new.setText("Output is "+output.toString());
                     return;
                 }
 
                 else
                 {
+                    System.out.println("Ghanta here");
+                    SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+                    SharedPreferences.Editor editor = settings.edit();
+                    editor.putString("logged", "logged");
+                    editor.commit();
+                    Toast.makeText(getApplicationContext(), "Successfull Login", Toast.LENGTH_SHORT).show();
+
                     if (saveLoginCheckBox.isChecked()) {
                         loginPrefsEditor.putBoolean("saveLogin", true);
                         loginPrefsEditor.putString("username", username);
                         loginPrefsEditor.putString("password", password);
+                        loginPrefsEditor.putString("OutpuData",output);
                         loginPrefsEditor.commit();
                     } else {
                         loginPrefsEditor.clear();
@@ -103,22 +123,20 @@ public class MainActivity extends AppCompatActivity {
             }
             catch (InterruptedException e)
             {
-                System.out.println("Well found an Exception in MainActivity 1 ");
-                ExceptionHandlerRedirector useThis=new ExceptionHandlerRedirector();
-                useThis.loadNewActivity();
+                //ExceptionHandlerRedirector useThis=new ExceptionHandlerRedirector();
+                //useThis.loadNewActivity();
                 e.getMessage();
                 e.printStackTrace();
-                startActivity(getIntent());
+                //startActivity(getIntent());
 
             }
             catch (ExecutionException e)
             {
-                System.out.println("Well found an Exception in MainActivity 2");
-                ExceptionHandlerRedirector useThis=new ExceptionHandlerRedirector();
-                useThis.loadNewActivity();
+                //ExceptionHandlerRedirector useThis=new ExceptionHandlerRedirector();
+                //useThis.loadNewActivity();
                 e.getMessage();
                 e.printStackTrace();
-                startActivity(getIntent());
+                //startActivity(getIntent());
             }
         }
 

@@ -1,7 +1,7 @@
 package a1klik.csp203.a1klik;
 
 public class courseData {
-    private String source;
+    public String source;
     private char delimghter;
     private int current_index;
     private int size;

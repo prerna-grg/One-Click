@@ -1,6 +1,7 @@
 package a1klik.csp203.a1klik;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -21,6 +22,7 @@ public class after_login extends AppCompatActivity {
     private ListView lvcourse;
     private courseListAdapter adapter;
     private List<course> mCourseList;
+    public static final String PREFS_NAME = "LoginPrefs";
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.after_login);
@@ -28,6 +30,7 @@ public class after_login extends AppCompatActivity {
         final String user_name=get_name(data);
         final int instructor_id=get_id(data);
         set_header(user_name);
+
         try {
             BackgroundWorker backgroundWorker = new BackgroundWorker(this);
             String type = "get_course";
@@ -38,8 +41,11 @@ public class after_login extends AppCompatActivity {
             lvcourse=(ListView)findViewById(R.id.courseListView);
             mCourseList=new ArrayList<>();
             int i=1;
+            System.out.println("PRINTING SOURCE");
+            tv_new.setText(courseExracted.source);
             while (courseExracted.hasNext())
             {
+
                 String[] splited=courseExracted.getNextLine().split(" ");
                 String course_name=splited[1];
                 int courseID=Integer.valueOf(splited[0]);
@@ -53,10 +59,10 @@ public class after_login extends AppCompatActivity {
                 }
                 catch(Exception ex)
                 {
-                    ExceptionHandlerRedirector useThis=new ExceptionHandlerRedirector();
-                    useThis.loadNewActivity();
+                    //ExceptionHandlerRedirector useThis=new ExceptionHandlerRedirector();
+                    //useThis.loadNewActivity();
                     ex.getMessage();
-                    startActivity(getIntent());
+                    //startActivity(getIntent());
                     ex.printStackTrace();
 
                 }
@@ -73,47 +79,62 @@ public class after_login extends AppCompatActivity {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     //tv_new.setText("Clicked Course");
-                    Intent newCoursePage=new Intent(after_login.this,coursePage.class);
-                    newCoursePage.putExtra("course_id", mCourseList.get((int)id).getCourseID());
-                    newCoursePage.putExtra("id", mCourseList.get((int)id).getId());
-                    newCoursePage.putExtra("courseName",mCourseList.get((int)id).getCourseName());
-                    newCoursePage.putExtra("courseTitle", mCourseList.get((int)id).getCourseTitle());
-                    newCoursePage.putExtra("UserName", user_name);
-                    newCoursePage.putExtra("Instructor_id",instructor_id);
+
+                    Intent newCoursePage=new Intent(after_login.this,coursePage.class);//
+                    newCoursePage.putExtra(getResources().getString(R.string.SetDataCourseId), mCourseList.get((int)id).getCourseID());
+                    newCoursePage.putExtra(getResources().getString(R.string.SetDataId), mCourseList.get((int)id).getId());
+                    newCoursePage.putExtra(getResources().getString(R.string.SetDataCourseName),mCourseList.get((int)id).getCourseName());
+                    newCoursePage.putExtra(getResources().getString(R.string.SetDataCourseTitle), mCourseList.get((int)id).getCourseTitle());
+                    newCoursePage.putExtra(getResources().getString(R.string.SetDataUserName), user_name);
+                    newCoursePage.putExtra(getResources().getString(R.string.SetDataInstructorID),instructor_id);
+
+//                    newCoursePage.putExtra("course_id", mCourseList.get((int)id).getCourseID());
+//                    newCoursePage.putExtra("id", mCourseList.get((int)id).getId());
+//                    newCoursePage.putExtra("courseName",mCourseList.get((int)id).getCourseName());
+//                    newCoursePage.putExtra("courseTitle", mCourseList.get((int)id).getCourseTitle());
+//                    newCoursePage.putExtra("UserName", user_name);
+//                    newCoursePage.putExtra("Instructor_id",instructor_id);
+
                     startActivity(newCoursePage);
-                    Toast.makeText(getApplicationContext(), "Clicked Course " + view.getTag(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Opening Course", Toast.LENGTH_SHORT).show();
                 }
             });
         }
         catch (InterruptedException e)
         {
-            ExceptionHandlerRedirector useThis=new ExceptionHandlerRedirector();
-            useThis.loadNewActivity();
+            //ExceptionHandlerRedirector useThis=new ExceptionHandlerRedirector();
+            //useThis.loadNewActivity();
             e.getMessage();
-            startActivity(getIntent());
+            //startActivity(getIntent());
             e.printStackTrace();
         }
         catch (ExecutionException e)
         {
-            ExceptionHandlerRedirector useThis=new ExceptionHandlerRedirector();
-            useThis.loadNewActivity();
+            //ExceptionHandlerRedirector useThis=new ExceptionHandlerRedirector();
+            //useThis.loadNewActivity();
             e.getMessage();
-            startActivity(getIntent());
+            //startActivity(getIntent());
             e.printStackTrace();
         }
         catch (Exception e)
         {
-            ExceptionHandlerRedirector useThis=new ExceptionHandlerRedirector();
-            useThis.loadNewActivity();
+            //ExceptionHandlerRedirector useThis=new ExceptionHandlerRedirector();
+            //useThis.loadNewActivity();
             e.getMessage();
-            startActivity(getIntent());
+            //startActivity(getIntent());
             e.printStackTrace();
         }
 
     }
     void onLogout(View view)
     {
-
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.remove("logged");
+        editor.commit();
+        TextView tv = (TextView) findViewById(R.id.tmpShowScreen);
+        tv.setText(null);
+        finish();
     }
     public int get_id(String input)
     {

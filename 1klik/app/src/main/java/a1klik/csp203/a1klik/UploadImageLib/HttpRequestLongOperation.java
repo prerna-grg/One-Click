@@ -126,12 +126,27 @@ public class HttpRequestLongOperation extends AsyncTask<String, Void, String> {
 
     @Override
     protected void onPostExecute(String result) {
+        if (result.length()==0)
+        {
+            return;
+        }
         // Set text view with result string
+        String Wait_Message="";
+        char c=result.charAt(0);
+        int tmp_index=0;
+        while (c!='#' && tmp_index<result.length())
+        {
+            Wait_Message=Wait_Message+Character.toString(result.charAt(tmp_index));
+            tmp_index++;
+            c=result.charAt(tmp_index);
+        }
+        //System.out.println(Wait_Message);
+        result=result.substring(tmp_index+1);
         if(textViewJSON == null){
             Toast.makeText(context, "NULL", Toast.LENGTH_SHORT).show();
         }
         else {
-            textViewJSON.setText(result);
+            textViewJSON.setText(Wait_Message);
         }
         // In onPostExecute we check if the listener is valid
         if(this.taskListener != null) {
