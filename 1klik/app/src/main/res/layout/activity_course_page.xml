@@ -23,7 +23,7 @@
 
             <TextView
                 android:id="@+id/loginUserName"
-                android:layout_width="283dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00c4ae"
                 android:ems="10"
@@ -34,12 +34,6 @@
                 android:textAlignment="center"
                 android:textSize="40dp" />
 
-            <ImageButton
-                android:id="@+id/LogoutButton"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:onClick="onLogout"
-                app:srcCompat="@android:drawable/ic_lock_power_off" />
 
         </LinearLayout>
 
@@ -54,22 +48,23 @@
             android:layout_height="wrap_content"
             android:fontFamily="cursive"
             android:padding="0dp"
-            android:text="Wait while we load your courses"
+            android:text="@string/LoginWaitMessage"
             android:textSize="20dp" />
 
         <Button
             android:id="@+id/buttonGallery"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Load_from_gallery"
-            android:onClick="loadFromGallery"/>
+            android:onClick="loadFromGallery"
+            android:text="Load_from_gallery" />
+
         <Button
             android:id="@+id/uploadButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Upload"
             android:onClick="uploadPhotoSelected"
-            />
+            android:text="Upload" />
+
         <TextView
             android:id="@+id/textViewDynamicText"
             android:layout_width="wrap_content"
@@ -77,25 +72,24 @@
             android:text="Please Choose Your Photo" />
 
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <ImageView
+                android:id="@+id/imageViewImage"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
-
-                <ImageView
-                    android:id="@+id/imageViewImage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:scaleType="centerInside"
-                    app:srcCompat="@mipmap/ic_launcher" />
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:scaleType="centerInside"
+                app:srcCompat="@mipmap/ic_launcher" />
 
 
-            </LinearLayout>
 
 
+        </LinearLayout>
 
 
     </LinearLayout>

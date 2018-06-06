@@ -1,6 +1,39 @@
 <resources>
+    <!--String Data for MainActivity -->
     <string name="app_name">1klik</string>
-    <string name="StoreFileLink">https://1klik.000webhostapp.com/ImageUpload/images</string>
-    <string name="UploadPHPFileLink">https://1klik.000webhostapp.com/ImageUpload/api</string>
-    <string name="ImageUploadApiPass">qw2e3erty6uiop</string>>
+    <string name="checkInterConnection">Please Check your Internet Connection</string>
+    <string name="InvalidEmailID">Please enter valid email ID</string>
+    <string name="InvalidPassword">Please enter valid Password,Length is too Short</string>
+    <string name="LoginWaitMessage">Please wait while we login</string>
+    <string name="InvalidEmailIDPass">Invalid emailID and Password </string>
+
+    <!--String Data for BackGroundWorker.java -->
+    <!--string name="loginPHPLink">https://1klik.000webhostapp.com/AndroidLogin/login.php</string-->
+    <!--string name="getCoursePHPLink">https://1klik.000webhostapp.com/AndroidLoggedIn/get_course.php</string-->
+    <string name="loginPHPLink">http://192.168.43.123/csp203/android_files/AndroidLogin/login.php</string>
+    <string name="getCoursePHPLink">http://192.168.43.123/csp203/android_files/AndroidLoggedIn/get_course.php</string>
+
+
+
+    <!--String Data for coursePage.java -->
+    <!--string name="StoreFileLink">https://1klik.000webhostapp.com/ImageUpload/images</string-->
+    <!--string name="UploadPHPFileLink">https://1klik.000webhostapp.com/ImageUpload/api</string-->
+    <string name="StoreFileLink">http://192.168.43.123/csp203/android_files/ImageUpload/images/</string>
+    <string name="UploadPHPFileLink">http://192.168.43.123/csp203/android_files/ImageUpload/api/</string>
+    <string name="markAttendance">http://10.20.0.56:5000/markface/</string>
+    <string name="ImageUploadApiPass">qw2e3erty6uiop</string>
+    <string name="SelectPhotoFirst">Please select the photo first</string>
+    <string name="sentAPIPass">inp_api_password</string>
+    <string name="sentInstructorId">i_name</string>
+    <string name="sentCourseName">c_name</string>
+
+    <!--String Data for AfterLogin.java -->
+    <string name="SetDataCourseId">course_id</string>
+    <string name="SetDataId">id</string>
+    <string name="SetDataCourseName">courseName</string>
+    <string name="SetDataCourseTitle">courseTitle</string>
+    <string name="SetDataUserName">UserName</string>
+    <string name="SetDataInstructorID">Instructor_id</string>
+
+
 </resources>
