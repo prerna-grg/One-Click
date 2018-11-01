@@ -1,0 +1,248 @@
+\documentclass{article}
+\usepackage{amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage[hidelinks]{hyperref}
+\usepackage{geometry}
+\usepackage{color}
+\geometry{a4paper,total={170mm,257mm},left=20mm,top=20mm}
+
+
+\title{Software Systems Lab\\CSP203\\ Design Document\\ \textbf{Smart Attendance using face recognition}}
+\author{Aditya Tiwari - 2016csb1029\\Himanshu Parihar - 2014csb1014 \\ Prerna Garg - 2016csb1050\\Vineet Mehta - 2016csb1063}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+\section{Introduction}
+
+\subsection{Objective} The aim of this application is to improvise the attendance system used in college using one camera click of the entire class and detecting students through face detection and recognition algorithms.
+\subsection{Features} 
+\subsubsection{Web Application} The web application allows any user(professor/student) to view the attendance records of any student enrolled in any course. The application is a view-only interface. The only editable option is given to a professor who can add a student's attendance if it has not been recongnised by the software.
+\subsubsection{Android Application} The android application allows a user to take a picture and upload on the server to detect people using python code pre-hosted on the server. It also displays the results obtained after processing in the form of names of students detected.
+\subsubsection{Server} The basic of function of server is to host and execute python code, allow the admin to update the database i.e add/delete/update courses/students/instructors and create instructor ID's and password for login purpose. It manages the input/output from both web and android interface. It also stores the database which is used by the python code and web application.
+\subsection{Limitations}
+\begin{itemize}
+\item The image quality has to be fairly good enough so that every face is clearly visible.
+\item The image should not be overly crowded.
+\item The image format should strictly be .jpeg or .jpg
+\item The accuracy of face detection is \textbf{99.99\%}
+\item The accuracy of face recognition is \textbf{99.38\%}
+\end{itemize}
+
+\section{Technology Description}
+\subsection{Languages} 
+\begin{itemize}
+\item Python
+\item Java, XML, Kotlin
+\item MySQL, PHP, HTML , CSS
+\item JavaScript
+\item DJango/Flask
+\end{itemize}
+\subsection{Tools} 
+\begin{itemize}
+\item dlib library and its documentation
+\item numpy library and its documentation
+\item scikit-image 
+\item Android Studio
+\end{itemize}
+
+
+\section{Functional Description}
+\subsection{Algorithm} 
+\subsubsection{Face Detection} Face detection is basically a program that decids whether an image is a face or not. The output is a simple 0 for NO FACE and 1 for FACE. In order to detect faces in a huge group of students we have used a function from python library dlib that detects the landmarks in the image and returns bounding squares of all possible human faces. It creates segmentations for the image and searches for faces in all segments.  It uses following facial landmarks to localize and represent salient features of the face.
+\begin{itemize}
+\item Eyes
+\item Eyebrows
+\item Nose
+\item Mouth
+\item Jawline
+\end{itemize}
+The alorithm is an essemble of regression trees trained on manually labeled facial landmarks on an image. It also uses the probability on distance between the pairs of input pixels in order to cope with mulitple faces in the same image. The algorithm gives 99.99\% accurate results. However if a face is half-hidden, the algorithm sometimes may not detect it which is reasonably fair. The output is a bounding square around the detected face and the feature points.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.5]{fd.png}
+\caption{\textbf{Face Detection Abstract Functioning}}
+\label{Fig:diag1}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+	\begin{subfigure}[b]{\textwidth}
+	\includegraphics[scale=0.25]{people.jpg}
+	\caption{\textbf{Input Image for face detector}}
+	\label{Fig:diag2_1}
+	\end{subfigure}
+	
+	\begin{subfigure}[b]{\textwidth}
+	\includegraphics[scale=0.25]{output.png}
+	\caption{\textbf{Output Image}}
+	\label{Fig:diag2_2}
+	\end{subfigure}
+	\caption{\textbf{Face Detection using dlib}}
+\end{center}
+\end{figure}
+
+\newpage
+
+\subsubsection{Face Recognition} For face recognition we aim to use the dlib library. The basic functions are as follows:
+\begin{itemize}
+\item \textbf{Generate Feature Vector:} The input image returns some m number of images with 128 feature points each. These feature points would be converted into a vector format for further computation.
+\item \textbf{Retrieve Images/Vector from Database} On the basis of courseID given as input by the android application, a student list of n students would be selected from the database and their respective feature vectors would be returned to the Python API.
+\item \textbf{mxn Comparisons:} The input m images will be transformed into their respective feature vectors using a previously well-trained neural network model in dlib library. These mxn comparisons yield m outputs depicting the name of the person in all of the m input image segments. The best match is found by calculating errors between the generated vectors. The maximum threshold for positive result is 0.6.
+\end{itemize}
+
+
+\section{Application Interface}
+\subsection{Web Interface} The web interface is primarily used for viewing the attendance data for nay course on any date. The homepage opens with a login page. On valid access it directs the professor to the courses he is currently taking in the particular semester and students to the course they have been enrolled in for the current semester. Student is given view-only access to the data while the professor can edit the attendance records in case a student has been missed by the face recognition routine. The data displayed on the webpage is retreived from the database itself allowing it to be isolated from any update overheads.
+\subsection{Android Interface} The home page of android app opens with an option to click a picture that directs the user to the camera of his phone and collects the clicked image which is sent to the server along with the course ID. The image is processed by the python code hosted on the server. The output is collected by the android app in the form of a string of space separated names of people detected which will be displayed on the user's android screen.
+\subsubsection{Code Snippets}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.35]{s1.png}
+\caption{\textbf{Invoke Intent to Capture}}
+\label{Fig:diag3_1}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.4]{s2.png}
+\caption{\textbf{On click Function}}
+\label{Fig:diag3_2}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.4]{s3.png}
+\caption{\textbf{Create image file}}
+\label{Fig:diag3_3}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.4]{s4.png}
+\caption{\textbf{Save picture to image gallery}}
+\label{Fig:diag3_4}
+\end{center}
+\end{figure}
+
+\newpage
+\subsubsection{Android Windows}
+The android app works as follows:
+   
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=1]{home_screen.jpg}
+\label{Fig:diag5_0}
+\end{center}
+\end{figure}
+\begin{center}
+{\large The homepage requires the user to enter a passKey that is common to all the professors and known only to them. This gives basic access to the application and prevents any non-professor user to access the system. Hence, this passKey protects the application.}
+\end{center}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=1]{login.jpg}
+\label{Fig:diag5_1}
+\end{center}
+\end{figure}
+\begin{center}
+{\large On valid access to the application the professor enters his unique ID and password to view his courses and do the further processing.}
+\end{center}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=1]{course_view.png}
+\label{Fig:diag5_2}
+\end{center}
+\end{figure}
+\begin{center}
+{\large Entering a valid ID would directs the professor to the list of courses he is taking in that particular semester. He can select the course he wants to take attendance of.}
+\end{center}
+
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=1]{take.jpg}
+\label{Fig:diag5_3}
+\end{center}
+\end{figure}
+\begin{center}
+{\large In this window clicking on take Attendance would invoke the camera of his phone and hence the functioing would begin. The image would be captured and prepared to be uploaded.}
+\end{center}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=1]{upload.jpg}
+\label{Fig:diag5_4}
+\end{center}
+\end{figure}
+\begin{center}
+{\large This window displays the captured image and upload photo option would send the image to the server for face detection.}
+\end{center}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=1]{output.jpg}
+\label{Fig:diag5_5}
+\end{center}
+\end{figure}
+\begin{center}
+{\large Finally the server would return a list of names of the faces detected using the existing data from the database and display the results in the form of list.}
+\end{center}
+\newpage
+
+
+\subsection{Database Model} The database stores the data of all instructors, students and courses using permanent join tables for serving many to many relationships. The join tables have been made a permanent part of the database as the join query is used everytime the database is invoked. The admin is responsible for creating/updating the tables,columns etc. into the database. The basic entities are instructors, students and courses. Rest of the entities are join tables. The model has been shown below:
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=1.2]{ERD.jpeg}
+\caption{\textbf{Entity Relationship Diagram}}
+\label{Fig:diag3}
+\end{center}
+\end{figure}
+
+
+
+\subsection{Server Interface} The server is the brain of the application. The python routines for face detection, feature extraction and face recognition are hosted on the server.
+\begin{enumerate}
+\item \textbf{Interaction with Android Interface} 
+It takes an image as input from the android app, and feeds to the face detection algorithm. The algorithm processes the image and returns a python dictionary consiting of face boundary boxes as well as pixels. 
+\item \textbf{Interaction with Database} The database sends a set of images with name labels to the server as per the course ID given as input by the user. The python face recognition routine perform the comparisons and yields results for the input segments and updates the results in the database using flask on the basis of timestamp.
+\end{enumerate}
+\newpage
+
+\section{Learning Sources}
+\begin{itemize}
+\color{blue}
+\item \href{https://www.youtube.com/watch?v=zRwy8gtgJ1A}{Flask Tutorial}
+\item \href{http://dlib.net/}{dlib Library}
+\item \href{https://developer.android.com/training/camera/photobasics.html}{Android Documentation}
+\end{itemize}
+
+\section{Memberwise Role}
+Our Project has the following broad to-do list:
+\begin{enumerate}
+\item Android Application
+\item Web Application
+\item Neural Networks
+\item Flask and Database programming
+\end{enumerate}
+\subsection{Aditya Tiwari:} Android and Web Application Programming
+\subsection{Prerna Garg:} Neural Networks and Web Application Programming
+\subsection{Vineet Mehta:} Flask and Web Application Programming
+\subsection{Himanshu Parihar:} Database Modelling
+\end{document}
